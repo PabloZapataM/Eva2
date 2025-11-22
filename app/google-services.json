@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433835695190",
+    "project_id": "eva2-5f6de",
+    "storage_bucket": "eva2-5f6de.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433835695190:android:b142f4a77fdfd740162ff7",
+        "android_client_info": {
+          "package_name": "com.example.zapata_pablo_androideval1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkJrMZIYDxcVkr0BjL_lgoNnEsvAzyGQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
