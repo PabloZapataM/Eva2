@@ -1,38 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-    <TextView
-        android:id="@+id/txtTituloHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Noticias"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#333"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp" />
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/noticia"
+        android:contentDescription="Logo"
+        android:layout_marginTop="20dp"
+        android:elevation="6dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerNoticias"
+    <!-- LOGOUT -->
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_lock_power_off"
+        android:tint="#D32F2F" />
+
+    <!-- CONTAINER LISTA -->
+    <RelativeLayout
+        android:id="@+id/containerCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/imgLogo"
+        android:layout_marginTop="25dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
         android:padding="12dp"
-        android:layout_below="@id/txtTituloHome" />
+        android:layout_marginBottom="70dp"
+        android:layout_marginHorizontal="4dp"
+        android:clipToOutline="true">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerNoticias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+    <!-- BOTÓN AGREGAR -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="24dp"
-        android:contentDescription="Agregar noticia"
+        android:layout_margin="20dp"
+        android:contentDescription="Agregar"
         app:srcCompat="@android:drawable/ic_input_add"
-        app:tint="@android:color/white"
-        app:backgroundTint="#3F51B5" />
+        android:tint="#FFFFFF"
+        app:backgroundTint="#1976D2" />
 
 </RelativeLayout>

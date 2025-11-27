@@ -6,29 +6,31 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class NewsAdapter(private var items: List<Noticia>, private val onClick: (Noticia) -> Unit) :
-    RecyclerView.Adapter<NewsAdapter.NewsVH>() {
-    inner class NewsVH(view: View) : RecyclerView.ViewHolder(view) {
-        val title: TextView = view.findViewById(R.id.item_title)
-        val summary: TextView = view.findViewById(R.id.item_summary)
+class NewsAdapter(
+    private val noticias: List<Noticia>,
+    private val onClick: (Noticia) -> Unit
+) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+
+    inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvTitulo: TextView = itemView.findViewById(R.id.tvTitulo)
+        val tvResumen: TextView = itemView.findViewById(R.id.tvResumen)
+        val tvAutor: TextView = itemView.findViewById(R.id.tvAutor)
+        val tvFecha: TextView = itemView.findViewById(R.id.tvFecha)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsVH {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_noticia, parent, false)
-        return NewsVH(v)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_noticia, parent, false)
+        return NewsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: NewsVH, position: Int) {
-        val n = items[position]
-        holder.title.text = n.titulo
-        holder.summary.text = n.resumen
-        holder.itemView.setOnClickListener { onClick(n) }
-    }
+    override fun getItemCount() = noticias.size
 
-    override fun getItemCount(): Int = items.size
-
-    fun update(list: List<Noticia>) {
-        this.items = list
-        notifyDataSetChanged()
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+        val noticia = noticias[position]
+        holder.tvTitulo.text = noticia.titulo
+        holder.tvResumen.text = noticia.resumen
+        holder.tvAutor.text = "Autor: ${noticia.autor}"
+        holder.tvFecha.text = "Fecha: ${noticia.fecha}"
+        holder.itemView.setOnClickListener { onClick(noticia) }
     }
 }

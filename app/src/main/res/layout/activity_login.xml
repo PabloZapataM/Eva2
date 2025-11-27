@@ -11,6 +11,16 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
+        <!-- LOGO -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/noticia"
+            android:contentDescription="Logo"
+            android:layout_marginBottom="25dp"
+            android:elevation="6dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,7 +28,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="#333"
-            android:layout_marginBottom="40dp" />
+            android:layout_marginBottom="30dp" />
 
         <EditText
             android:id="@+id/etUsuario"
