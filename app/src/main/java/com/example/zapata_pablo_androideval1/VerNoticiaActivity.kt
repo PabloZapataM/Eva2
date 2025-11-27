@@ -25,7 +25,7 @@ class VerNoticiaActivity : AppCompatActivity() {
 
         val btnVolver = findViewById<Button>(R.id.btnVolverInicio)
         btnVolver.setOnClickListener {
-            finish() // Solo volver atrás
+            finish()
         }
     }
 }
