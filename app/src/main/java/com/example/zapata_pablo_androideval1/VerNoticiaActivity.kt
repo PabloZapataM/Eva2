@@ -1,6 +1,6 @@
 package com.example.zapata_pablo_androideval1
 
-import android.content.Intent 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -24,9 +24,8 @@ class VerNoticiaActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvFecha).text = "Fecha: $fecha"
 
         val btnVolver = findViewById<Button>(R.id.btnVolverInicio)
-
         btnVolver.setOnClickListener {
-            finish() // Solo volver atrás, NO crear nueva activity
+            finish() // Solo volver atrás
         }
     }
 }

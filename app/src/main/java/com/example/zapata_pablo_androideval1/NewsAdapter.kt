@@ -11,7 +11,8 @@ class NewsAdapter(
     private val onClick: (Noticia) -> Unit
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    // ViewHolder normal, ya no es necesario 'inner'
+    class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvTitulo: TextView = itemView.findViewById(R.id.tvTitulo)
         val tvResumen: TextView = itemView.findViewById(R.id.tvResumen)
         val tvAutor: TextView = itemView.findViewById(R.id.tvAutor)
