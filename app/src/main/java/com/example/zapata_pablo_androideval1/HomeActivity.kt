@@ -3,13 +3,13 @@ package com.example.zapata_pablo_androideval1
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import android.widget.Toast
 
 class HomeActivity : AppCompatActivity() {
 
@@ -24,7 +24,16 @@ class HomeActivity : AppCompatActivity() {
 
         recycler = findViewById(R.id.recyclerNoticias)
         recycler.layoutManager = LinearLayoutManager(this)
-        adapter = NewsAdapter(noticiasList) {}
+
+        adapter = NewsAdapter(noticiasList) { noticia ->
+            val intent = Intent(this, VerNoticiaActivity::class.java)
+            intent.putExtra("titulo", noticia.titulo)
+            intent.putExtra("contenido", noticia.contenido)
+            intent.putExtra("autor", noticia.autor)
+            intent.putExtra("fecha", noticia.fecha)
+            startActivity(intent)
+        }
+
         recycler.adapter = adapter
 
         findViewById<FloatingActionButton>(R.id.fabAdd).setOnClickListener {

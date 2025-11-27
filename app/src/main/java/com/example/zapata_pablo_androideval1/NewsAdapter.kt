@@ -11,7 +11,6 @@ class NewsAdapter(
     private val onClick: (Noticia) -> Unit
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    // ViewHolder normal, ya no es necesario 'inner'
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvTitulo: TextView = itemView.findViewById(R.id.tvTitulo)
         val tvResumen: TextView = itemView.findViewById(R.id.tvResumen)
@@ -20,7 +19,8 @@ class NewsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_noticia, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_noticia, parent, false)
         return NewsViewHolder(view)
     }
 
@@ -28,10 +28,12 @@ class NewsAdapter(
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val noticia = noticias[position]
+
         holder.tvTitulo.text = noticia.titulo
         holder.tvResumen.text = noticia.resumen
         holder.tvAutor.text = "Autor: ${noticia.autor}"
         holder.tvFecha.text = "Fecha: ${noticia.fecha}"
+
         holder.itemView.setOnClickListener { onClick(noticia) }
     }
 }

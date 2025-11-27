@@ -1,6 +1,5 @@
 package com.example.zapata_pablo_androideval1
 
-
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -12,19 +11,17 @@ class VerNoticiaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_noticia)
 
-        // Datos recibidos desde el adapter
-        val nombre = intent.getStringExtra("nombre") ?: ""
+        val titulo = intent.getStringExtra("titulo") ?: ""
+        val contenido = intent.getStringExtra("contenido") ?: ""
+        val autor = intent.getStringExtra("autor") ?: ""
         val fecha = intent.getStringExtra("fecha") ?: ""
-        val motivo = intent.getStringExtra("motivo") ?: ""
 
-        // Asignar a los TextView del XML
-        findViewById<TextView>(R.id.tvTitulo).text = motivo
-        findViewById<TextView>(R.id.tvContenido).text = motivo
-        findViewById<TextView>(R.id.tvAutor).text = "Autor: $nombre"
+        findViewById<TextView>(R.id.tvTitulo).text = titulo
+        findViewById<TextView>(R.id.tvContenido).text = contenido
+        findViewById<TextView>(R.id.tvAutor).text = "Autor: $autor"
         findViewById<TextView>(R.id.tvFecha).text = "Fecha: $fecha"
 
-        val btnVolver = findViewById<Button>(R.id.btnVolverInicio)
-        btnVolver.setOnClickListener {
+        findViewById<Button>(R.id.btnVolverInicio).setOnClickListener {
             finish()
         }
     }
