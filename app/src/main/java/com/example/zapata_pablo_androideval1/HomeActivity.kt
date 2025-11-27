@@ -1,5 +1,6 @@
 package com.example.zapata_pablo_androideval1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
@@ -54,6 +55,7 @@ class HomeActivity : AppCompatActivity() {
         cargarNoticias()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun cargarNoticias() {
         db.collection("noticias")
             .get()

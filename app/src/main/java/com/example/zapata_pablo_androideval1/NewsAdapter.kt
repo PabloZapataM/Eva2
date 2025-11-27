@@ -1,5 +1,6 @@
 package com.example.zapata_pablo_androideval1
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class NewsAdapter(
 
     override fun getItemCount() = noticias.size
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val noticia = noticias[position]
 
