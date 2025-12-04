@@ -12,22 +12,23 @@
         android:layout_height="140dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/noticia"
-        android:contentDescription="Logo"
         android:layout_marginTop="20dp"
-        android:elevation="6dp" />
+        android:contentDescription="@null" />
 
-    <!-- LOGOUT -->
+    <!-- BOTÓN LOGOUT -->
     <ImageButton
         android:id="@+id/btnLogout"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
         android:src="@android:drawable/ic_lock_power_off"
-        android:tint="#D32F2F" />
+        android:background="@android:color/transparent"
+        app:tint="#D32F2F"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no"/>
 
-    <!-- CONTAINER LISTA -->
+    <!-- CONTENEDOR PRINCIPAL -->
     <RelativeLayout
         android:id="@+id/containerCard"
         android:layout_width="match_parent"
@@ -35,16 +36,14 @@
         android:layout_below="@id/imgLogo"
         android:layout_marginTop="25dp"
         android:background="#FFFFFF"
-        android:elevation="4dp"
-        android:padding="12dp"
-        android:layout_marginBottom="70dp"
-        android:layout_marginHorizontal="4dp"
-        android:clipToOutline="true">
+        android:padding="12dp">
 
+        <!-- LISTA DE NOTICIAS -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerNoticias"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
     </RelativeLayout>
 
     <!-- BOTÓN AGREGAR -->
@@ -55,9 +54,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:contentDescription="Agregar"
         app:srcCompat="@android:drawable/ic_input_add"
         android:tint="#FFFFFF"
-        app:backgroundTint="#1976D2" />
+        app:backgroundTint="#1976D2"
+        android:contentDescription="Agregar noticia" />
+
 
 </RelativeLayout>

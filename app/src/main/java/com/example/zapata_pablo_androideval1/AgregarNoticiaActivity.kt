@@ -22,6 +22,7 @@ class AgregarNoticiaActivity : AppCompatActivity() {
         val etAutor = findViewById<EditText>(R.id.etAutor)
         val etResumen = findViewById<EditText>(R.id.etResumen)
         val etContenido = findViewById<EditText>(R.id.etContenido)
+        val etImagenUrl = findViewById<EditText>(R.id.etImagenUrl)
 
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
         val btnVolverInicio = findViewById<Button>(R.id.btnVolver)
@@ -37,8 +38,8 @@ class AgregarNoticiaActivity : AppCompatActivity() {
                 "fecha" to etFecha.text.toString(),
                 "autor" to etAutor.text.toString(),
                 "resumen" to etResumen.text.toString(),
-                "contenido" to etContenido.text.toString()
-            )
+                "contenido" to etContenido.text.toString(),
+                "imagenUrl" to etImagenUrl.text.toString())
 
             db.collection("noticias").add(noticia)
                 .addOnSuccessListener {

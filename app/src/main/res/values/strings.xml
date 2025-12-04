@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Zapata_Pablo_AndroidEval1</string>
+    <string name="logo">Logo</string>
+    <string name="agregar">Agregar</string>
+    <string name="todo">TODO</string>
+    <string name="publicado_el_03_12_2024">Publicado el: 03/12/2024</string>
+    <string name="descubren_nuevo_planeta_potencialmente_habitable_en_la_constelaci_n_de_centauro">Descubren Nuevo Planeta Potencialmente Habitable en la Constelación de Centauro</string>
+    <string name="imagen_noticia">Imagen Noticia</string>
 </resources>

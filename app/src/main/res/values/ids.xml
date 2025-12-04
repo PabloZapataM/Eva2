@@ -9,4 +9,8 @@
     <item name="fabAdd" type="id" />
     <item name="btnLogout" type="id" />
     <item name="containerCard" type="id" />
+    <item name="btnEliminar" type="id" />
+    <item name="btnEditar" type="id" />
+    <item name="noticiaEjemplo" type="id" />
+    <item name="imgNoticia" type="id" />
 </resources>

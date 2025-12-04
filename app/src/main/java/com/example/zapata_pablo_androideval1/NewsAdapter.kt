@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class NewsAdapter(
     private val noticias: List<Noticia>,
@@ -13,6 +15,7 @@ class NewsAdapter(
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imgNoticia: ImageView = itemView.findViewById(R.id.imgNoticia)
         val tvTitulo: TextView = itemView.findViewById(R.id.tvTitulo)
         val tvResumen: TextView = itemView.findViewById(R.id.tvResumen)
         val tvAutor: TextView = itemView.findViewById(R.id.tvAutor)
@@ -30,6 +33,13 @@ class NewsAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val noticia = noticias[position]
+
+        // ⭐ Cargar imagen desde URL con Glide
+        Glide.with(holder.itemView.context)
+            .load(noticia.imagenUrl)
+            .placeholder(R.drawable.noticia) // mientras carga
+            .error(R.drawable.noticia)       // si falla la URL
+            .into(holder.imgNoticia)
 
         holder.tvTitulo.text = noticia.titulo
         holder.tvResumen.text = noticia.resumen

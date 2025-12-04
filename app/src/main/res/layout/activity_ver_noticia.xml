@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- TARJETA -->
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- TÍTULO -->
+
                 <TextView
                     android:id="@+id/tvTitulo"
                     android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="12dp" />
 
-                <!-- AUTOR -->
+
                 <TextView
                     android:id="@+id/tvAutor"
                     android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                     android:textSize="16sp"
                     android:layout_marginBottom="4dp" />
 
-                <!-- FECHA -->
+
                 <TextView
                     android:id="@+id/tvFecha"
                     android:layout_width="match_parent"
@@ -58,14 +58,14 @@
                     android:textSize="16sp"
                     android:layout_marginBottom="18dp" />
 
-                <!-- Separador -->
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#DDDDDD"
                     android:layout_marginBottom="20dp" />
 
-                <!-- CONTENIDO -->
+
                 <TextView
                     android:id="@+id/tvContenido"
                     android:layout_width="match_parent"
@@ -79,7 +79,7 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- BOTÓN VOLVER -->
+
         <Button
             android:id="@+id/btnVolverInicio"
             android:layout_width="match_parent"

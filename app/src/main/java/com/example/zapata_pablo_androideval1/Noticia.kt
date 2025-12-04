@@ -6,5 +6,7 @@ data class Noticia(
     val resumen: String = "",
     val contenido: String = "",
     val autor: String = "",
-    val fecha: String = ""
+    val fecha: String = "",
+    val imagenUrl: String = ""
+
 )
